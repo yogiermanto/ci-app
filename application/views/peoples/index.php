@@ -12,21 +12,22 @@
 					</tr>
 				</thead>
 				<tbody>
-                    <?php $no = 1; ?>
                     <?php foreach($peoples as $people) : ?>
 					<tr>
-						<td><?= $no++ ?></td>
+						<td><?= ++$start ?></td>
 						<td><?= $people['name'] ?></td>
 						<td><?= $people['email'] ?></td>
 						<td>
-							<a href="" class="badge badge-danger" onclick="return confirm('yakin?')">Hapus</a>
-							<a href="" class="badge badge-warning">Edit</a>
 							<a href="" class="badge badge-primary">Detail</a>
+							<a href="" class="badge badge-warning">Edit</a>
+							<a href="" class="badge badge-danger" onclick="return confirm('yakin?')">Hapus</a>
 						</td>
 					</tr>
                     <?php endforeach ?>
 				</tbody>
 			</table>
+
+			<?= $this->pagination->create_links(); ?>
 		</div>
 	</div>
 </div>

@@ -7,8 +7,13 @@ class Peoples_model extends CI_model {
         return $this->db->get('peoples')->result_array();
     }
 
-    public function getPeople($limit, $offset)
+    public function getPeoples($limit, $offset)
     {
         return $this->db->get('peoples', $limit, $offset)->result_array();
+    }
+
+    public function countAllPeople()
+    {
+        return $this->db->get('peoples')->num_rows();
     }
 }
